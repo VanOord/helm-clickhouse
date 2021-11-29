@@ -1,5 +1,5 @@
 ## Timezone
-timezone: "Asia/Shanghai"
+timezone: "UTC"
 
 ## Cluster domain
 clusterDomain: "cluster.local"
@@ -102,15 +102,14 @@ clickhouse:
   ## An API object that manages external access to the services in a cluster, typically HTTP.
   ## Ingress can provide load balancing, SSL termination and name-based virtual hosting.
   ingress: 
-    enabled: false
-  #  host: "clickhouse.domain.com"
-  #  path: "/"
-  #  tls: 
-  #    enabled: false
-  #    hosts: 
-  #    - "clickhouse.domain.com"
-  #    - "clickhouse.domain1.com"
-  #    secretName: "clickhouse-secret"
+    enabled: true
+    host: "clickhouse.data-dev.vanoord.com"
+    path: "/"
+    tls: 
+      enabled: true
+      hosts: 
+      - "clickhouse.data-dev.vanoord.com"
+      secretName: "clickhouse-ingress-secret"
   ## 
   ## Clickhouse config.xml and metrica.xml
   configmap:
@@ -363,12 +362,11 @@ tabix:
   ## An API object that manages external access to the services in a cluster, typically HTTP.
   ## Ingress can provide load balancing, SSL termination and name-based virtual hosting.
   ingress: 
-    enabled: false
-  #  host: "tabix.domain.com"
-  #  path: "/"
-  #  tls: 
-  #    enabled: false
-  #    hosts: 
-  #    - "tabix.domain.com"
-  #    - "tabix.domain1.com"
-  #    secretName: "tabix-secret"
+    enabled: true
+    host: "tabix.data-dev.vanoord.com"
+    path: "/"
+    tls: 
+      enabled: true
+      hosts: 
+      - "tabix.data-dev.vanoord.com"
+      secretName: "tabix-ingress-secret"
